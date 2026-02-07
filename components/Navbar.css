@@ -1,0 +1,396 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   MADC Club Premium Glassmorphic Navbar
+   Based on ERP Project Theme - Dark mode with accent colors
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Navbar Base - Transparent by default (hero section) */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding: 16px 0;
+}
+
+.navbar.scrolled {
+    padding: 10px 0;
+}
+
+.navbar-wrapper {
+    padding: 0 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Transparent navbar content (hero section) */
+.navbar-content {
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    border-radius: 60px;
+    padding: 12px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: none;
+    transition: all 0.4s ease;
+}
+
+/* Navbar remains transparent even when scrolled */
+.navbar.scrolled .navbar-content {
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LOGO SECTION
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.navbar-brand {
+    flex-shrink: 0;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.logo-image {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    position: relative;
+    z-index: 10;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 15px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 25px rgba(201, 125, 74, 0.5)) drop-shadow(0 0 40px rgba(201, 125, 74, 0.3));
+    animation: logoGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes logoGlow {
+    0% {
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 15px rgba(255, 255, 255, 0.3)) drop-shadow(0 0 25px rgba(201, 125, 74, 0.4)) drop-shadow(0 0 40px rgba(201, 125, 74, 0.2));
+    }
+
+    100% {
+        filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 25px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 40px rgba(201, 125, 74, 0.7)) drop-shadow(0 0 60px rgba(201, 125, 74, 0.4));
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   NAVIGATION MENU
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.navbar-menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-link.active {
+    color: #ffffff;
+    background: rgba(201, 125, 74, 0.15);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background: #c97d4a;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(201, 125, 74, 0.6);
+}
+
+.nav-text {
+    letter-spacing: 0.3px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ACTION BUTTONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.navbar-actions.desktop {
+    display: flex;
+}
+
+.navbar-actions.mobile {
+    display: none;
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn-join {
+    background: linear-gradient(135deg, #c97d4a 0%, #a66538 100%);
+    color: #ffffff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    letter-spacing: 0.5px;
+    box-shadow: 0 6px 24px rgba(201, 125, 74, 0.35);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-join::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn-join:hover::before {
+    left: 100%;
+}
+
+.btn-join:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 35px rgba(201, 125, 74, 0.5);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MOBILE MENU TOGGLE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: relative;
+    z-index: 1001;
+}
+
+.mobile-menu-toggle span {
+    width: 24px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-origin: center;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(5px) translateX(5px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-5px) translateX(5px);
+}
+
+/* Mobile Backdrop */
+.mobile-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    z-index: 998;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE DESIGN
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1100px) {
+    .navbar-wrapper {
+        padding: 0 24px;
+    }
+
+    .nav-link {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 900px) {
+    .navbar-wrapper {
+        padding: 0 20px;
+    }
+
+    .navbar-content {
+        padding: 12px 20px;
+        border-radius: 20px;
+    }
+
+    .logo-text {
+        font-size: 18px;
+    }
+
+    .logo-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .navbar-actions.desktop {
+        display: none;
+    }
+
+    .navbar-menu {
+        position: fixed;
+        top: 80px;
+        left: 20px;
+        right: 20px;
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+        border: 1px solid rgba(201, 125, 74, 0.15);
+        border-radius: 24px;
+        flex-direction: column;
+        padding: 28px;
+        gap: 8px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px) scale(0.95);
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    .navbar-menu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+    }
+
+    .nav-link {
+        width: 100%;
+        justify-content: center;
+        padding: 16px;
+        font-size: 16px;
+        border-radius: 14px;
+    }
+
+    .nav-link.active::after {
+        display: none;
+    }
+
+    .navbar-actions.mobile {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btn-join {
+        width: 100%;
+        padding: 16px;
+        font-size: 16px;
+    }
+
+    .mobile-backdrop {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 12px 0;
+    }
+
+    .navbar-wrapper {
+        padding: 0 16px;
+    }
+
+    .navbar-content {
+        padding: 10px 16px;
+        border-radius: 16px;
+    }
+
+    .logo-text {
+        font-size: 16px;
+    }
+
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .navbar-menu {
+        top: 70px;
+        left: 16px;
+        right: 16px;
+        padding: 24px 20px;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes navFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar {
+    animation: navFadeIn 0.8s ease;
+}

@@ -1,0 +1,394 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   MADC Club — Gallery Section Premium Styles
+   Floating Parallax Photo Wall Design
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Section Container */
+.gallery-section {
+    position: relative;
+    background: #0a0a0a;
+    padding: 100px 0;
+    overflow: hidden;
+    z-index: 5;
+    min-height: 100vh;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BACKGROUND ELEMENTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.gallery-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.gallery-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(150px);
+}
+
+.gallery-orb-1 {
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(201, 125, 74, 0.1) 0%, transparent 60%);
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.gallery-orb-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.08) 0%, transparent 70%);
+    bottom: -100px;
+    right: -100px;
+}
+
+.gallery-noise {
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION HEADER
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.gallery-header {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 80px;
+    padding: 0 24px;
+}
+
+.gallery-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background: rgba(20, 20, 20, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50px;
+    margin-bottom: 24px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.gallery-label .label-dot {
+    width: 8px;
+    height: 8px;
+    background: #c97d4a;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(201, 125, 74, 0.6);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.2);
+    }
+}
+
+.gallery-title {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+.gallery-title .text-gradient {
+    background: linear-gradient(135deg, #c97d4a 0%, #e09a68 50%, #f5b98a 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientFlow 5s ease infinite;
+}
+
+@keyframes gradientFlow {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.gallery-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FLOATING PHOTO WALL
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.photo-wall {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Photo Sizes */
+.floating-photo {
+    position: relative;
+    z-index: 1;
+    will-change: transform;
+}
+
+.photo-large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.photo-medium {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.photo-small {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+/* Photo Frame */
+.photo-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(16, 16, 16, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.03);
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.photo-large .photo-frame {
+    min-height: 440px;
+}
+
+.floating-photo:hover .photo-frame {
+    border-color: rgba(201, 125, 74, 0.4);
+    box-shadow:
+        0 40px 80px rgba(0, 0, 0, 0.5),
+        0 0 60px rgba(201, 125, 74, 0.15),
+        0 0 0 1px rgba(201, 125, 74, 0.2);
+}
+
+/* Photo Image */
+.photo-image {
+    position: absolute;
+    inset: 0;
+}
+
+.photo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.floating-photo:hover .photo-image img {
+    transform: scale(1.1);
+}
+
+/* Shine Effect */
+.photo-shine {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 40%,
+            transparent 60%,
+            rgba(255, 255, 255, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.floating-photo:hover .photo-shine {
+    opacity: 1;
+}
+
+/* Photo Overlay */
+.photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 60px 24px 20px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    display: flex;
+    align-items: flex-end;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+}
+
+.floating-photo:hover .photo-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.photo-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.photo-large .photo-title {
+    font-size: 1.3rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DECORATIVE ELEMENTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.gallery-decor {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.decor-line {
+    position: absolute;
+    background: linear-gradient(90deg, transparent, rgba(201, 125, 74, 0.1), transparent);
+    height: 1px;
+}
+
+.decor-line-1 {
+    top: 20%;
+    left: 0;
+    right: 0;
+}
+
+.decor-line-2 {
+    bottom: 25%;
+    left: 0;
+    right: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+    .photo-wall {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 0 24px;
+    }
+
+    .photo-large {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .photo-large .photo-frame {
+        min-height: 360px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-section {
+        padding: 60px 0;
+    }
+
+    .gallery-header {
+        margin-bottom: 50px;
+    }
+
+    .photo-wall {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .photo-large {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .photo-frame {
+        min-height: 160px;
+        border-radius: 16px;
+    }
+
+    .photo-large .photo-frame {
+        min-height: 240px;
+    }
+
+    .photo-overlay {
+        opacity: 1;
+        transform: translateY(0);
+        padding: 40px 16px 14px;
+    }
+
+    .photo-title {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-wall {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .photo-frame {
+        min-height: 130px;
+        border-radius: 12px;
+    }
+
+    .photo-large .photo-frame {
+        min-height: 180px;
+    }
+
+    .gallery-label {
+        font-size: 0.65rem;
+        padding: 8px 14px;
+    }
+
+    .photo-title {
+        font-size: 0.8rem;
+    }
+
+    .photo-overlay {
+        padding: 30px 12px 10px;
+    }
+}
