@@ -26,14 +26,14 @@ const staggerContainer = {
 
 // Faculty Leadership Data
 const facultyLeadership = [
-    { name: 'Thiru. E.R.K. Krishnan', role: 'Chief Patron', designation: 'M.Com — Correspondent', image: 'https://i.pravatar.cc/300?img=68' },
-    { name: 'Dr. R. Parameshwaran', role: 'Patron', designation: 'M.E., Ph.D — Principal', image: 'https://i.pravatar.cc/300?img=60' },
+
+    { name: 'Dr. R. Parameshwaran', role: 'Patron', designation: 'M.E., Ph.D — Principal', image: '/team/Parameshwaran.jpg' },
     { name: 'Dr. S. Anandamurugan', role: 'President', designation: 'M.E., Ph.D — HOD / IT', image: '/team/anandamurugan.jpg' },
 ]
 
 const staffCoordinators = [
     { name: 'Mr. A. P. Ponselvakumar', role: 'Staff Coordinator', designation: 'Assistant Professor (SLG)', image: '/team/ponselvakumar.jpg' },
-    { name: 'Mrs. P. Vanitha', role: 'Staff Coordinator', designation: 'Assistant Professor, IT', image: 'https://i.pravatar.cc/300?img=47' },
+    { name: 'Mrs. P. Vanitha', role: 'Staff Coordinator', designation: 'Assistant Professor, IT', image: '/team/vanitha.jpg' },
 ]
 
 // Office Bearers Data
@@ -122,7 +122,7 @@ export default function TeamSection() {
                             <h3 className="block-title">Faculty Leadership</h3>
                         </motion.div>
 
-                        <motion.div className="profile-grid" variants={staggerContainer}>
+                        <motion.div className="profile-grid two-col" variants={staggerContainer}>
                             {facultyLeadership.map((member, i) => (
                                 <ProfileCard key={i} member={member} />
                             ))}

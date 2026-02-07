@@ -6,18 +6,17 @@ import './GallerySection.css'
 
 // Gallery images - completely different set, mobile/app development themed
 const galleryImages = [
-    { id: 1, src: 'https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?w=600&q=80', title: 'App Design' },
-    { id: 2, src: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80', title: 'Mobile First' },
-    { id: 3, src: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&q=80', title: 'App Interface' },
-    { id: 4, src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80', title: 'Analytics Dashboard' },
-    { id: 5, src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80', title: 'Data Insights' },
-    { id: 6, src: 'https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=600&q=80', title: 'Code Editor' },
-    { id: 7, src: 'https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&q=80', title: 'Developer Setup' },
-    { id: 8, src: 'https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=600&q=80', title: 'GitHub Workflow' },
-    { id: 9, src: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&q=80', title: 'React Development' },
-    { id: 10, src: 'https://images.unsplash.com/photo-1559028012-481c04fa702d?w=600&q=80', title: 'UI Prototype' },
-    { id: 11, src: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&q=80', title: 'Creative Coding' },
-    { id: 12, src: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600&q=80', title: 'Design System' },
+    { id: 1, src: '/gallery/image1.jpeg', title: 'MADC Event' },
+    { id: 2, src: '/gallery/image2.jpeg', title: 'Workshop' },
+    { id: 3, src: '/gallery/image3.jpeg', title: 'Team Work' },
+    { id: 4, src: '/gallery/image4.jpeg', title: 'Innovation' },
+    { id: 5, src: '/gallery/image5.jpeg', title: 'Hackathon' },
+    { id: 6, src: '/gallery/image6.jpeg', title: 'Coding' },
+    { id: 7, src: '/gallery/image7.png', title: 'Design' },
+    { id: 8, src: '/gallery/image8.jpeg', title: 'Development' },
+    { id: 9, src: '/gallery/image9.png', title: 'Collaboration' },
+    { id: 10, src: '/gallery/image10.png', title: 'Projects' },
+    { id: 11, src: '/gallery/image11.png', title: 'Success' },
 ]
 
 // Animation variants

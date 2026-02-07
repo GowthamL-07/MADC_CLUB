@@ -119,8 +119,8 @@ export default function Home() {
                         animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : 30 }}
                         transition={{ duration: 0.8, delay: 0.7 }}
                     >
-                        <span className="hero-intro">Welcome to</span><br />
-                        <span className="text-gradient">MADC Club</span>
+                        <span className="hero-intro">Welcome to</span>
+                        <span className="text-gradient">MADC</span>
                     </motion.h1>
                     <motion.p
                         className="hero-subtitle"

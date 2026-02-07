@@ -265,38 +265,7 @@ export default function AboutSection() {
                 </div>
             </Section>
 
-            {/* ═══════════════════════════════════════════════════════════════════
-                FOCUS AREAS
-            ═══════════════════════════════════════════════════════════════════ */}
-            <Section className="about-focus">
-                <div className="section-container">
-                    <motion.div className="focus-header" variants={fadeInUp}>
-                        <span className="section-label">What We Do</span>
-                        <h2 className="section-heading">
-                            Our <span className="text-gradient">Focus Areas</span>
-                        </h2>
-                    </motion.div>
 
-                    <motion.div className="focus-grid" variants={staggerContainer}>
-                        {focusAreas.map((area, index) => (
-                            <motion.div
-                                key={index}
-                                className="focus-card"
-                                variants={scaleIn}
-                                whileHover={{ y: -12 }}
-                            >
-                                <div className="focus-card-glow" style={{ background: area.gradient }} />
-                                <div className="focus-icon" style={{ background: area.gradient }}>
-                                    {getIcon(area.icon)}
-                                </div>
-                                <h3 className="focus-title">{area.title}</h3>
-                                <p className="focus-description">{area.description}</p>
-                                <div className="focus-number">0{index + 1}</div>
-                            </motion.div>
-                        ))}
-                    </motion.div>
-                </div>
-            </Section>
 
             {/* ═══════════════════════════════════════════════════════════════════
                 VISION & MISSION CARDS

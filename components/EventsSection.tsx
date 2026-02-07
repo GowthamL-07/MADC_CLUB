@@ -71,6 +71,32 @@ const Icons = {
 // Events Data
 const events = [
     {
+        id: 'genai-workshop',
+        title: 'Gen-AI Workshop',
+        subtitle: 'Innovation & Creativity',
+        tagline: 'FUTURE OF AI',
+        category: 'WORKSHOP',
+        teamSize: 'Individual',
+        date: '7 Feb 2026',
+        time: '9:00 AM - 4:00 PM',
+        venue: 'IT Park',
+        image: '/events/genai.png',
+        description: 'A hands-on session fostering innovation and creativity among students with participation from college leadership. Explore the cutting-edge world of Generative AI and its applications.',
+        highlights: [
+            'Hands-on with Gen-AI tools',
+            'Prompt Engineering basics',
+            'Real-world use cases',
+            'Interactive Q&A session'
+        ],
+        listTitle: 'AGENDA',
+        listItems: [
+            { title: 'Introduction to Gen-AI', desc: 'Basics and evolution' },
+            { title: 'Prompt Engineering', desc: 'Mastering inputs' },
+            { title: 'Tools & Platforms', desc: 'ChatGPT, Midjourney, etc.' },
+            { title: 'Future Trends', desc: 'What comes next' }
+        ]
+    },
+    {
         id: 'madathon',
         title: 'MADATHON 2K25',
         subtitle: '24-Hour Non-Stop Hackathon',
@@ -80,7 +106,7 @@ const events = [
         date: 'Dec 26-27, 2025',
         time: '9:00 AM - 6:00 PM',
         venue: 'IT Park',
-        image: '/events/madathon.jpg',
+        image: '/events/madathon.jpeg',
         description: 'MADATHON is our flagship 24-hour hackathon where students ideate, develop, and present working solutions. Teams go through multiple evaluation rounds across two days, building real projects from scratch with mentorship and guidance.',
         highlights: [
             'Full 24-hour development cycle',
@@ -107,7 +133,7 @@ const events = [
         teamSize: 'Open to All',
         date: '28 July 2025',
         venue: 'IT Seminar Hall',
-        image: '/events/oracle.jpg',
+        image: '/events/oracle.png',
         speaker: 'Mr. Sankar Madhappan',
         speakerRole: 'Senior Cloud Engineer, Oracle Solutions',
         description: 'The inaugural session of MADC featured an industry guest lecture focusing on how low-code platforms like Oracle VBCS are transforming hybrid mobile app development.',
@@ -134,7 +160,7 @@ const events = [
         teamSize: 'Individual',
         date: '18 August 2025',
         venue: 'IT Park – CC8',
-        image: '/events/reactnative.jpg',
+        image: '/events/reactnative.png',
         speaker: 'Mr. Mukil S',
         speakerRole: 'Final Year IT, KEC',
         description: 'This hands-on workshop introduced students to cross-platform mobile app development using React Native. Participants learned environment setup, project structure, and components.',
@@ -161,7 +187,7 @@ const events = [
         teamSize: 'Individual',
         date: '20 September 2025',
         venue: 'IT Park',
-        image: '/events/uiux.jpg',
+        image: '/events/uiux.png',
         speaker: 'Mr. Naveen',
         speakerRole: 'Final Year IT, KEC',
         description: 'This workshop focused on design thinking and user-centered design. Students were introduced to Figma and Adobe XD, learning wireframing, prototyping, and layout principles.',
@@ -188,7 +214,7 @@ const events = [
         teamSize: '1 to 3 Members',
         date: '4 October 2025',
         venue: 'Srinivasa Ramanujan Hall',
-        image: '/events/jarvis.jpg',
+        image: '/events/jarvis.png',
         organizer: 'Department of CSE, KEC',
         description: 'JARVIS 2K25 was a large-scale student tech fest featuring both technical and creative competitions. Students showcased innovation and design skills across multiple events.',
         highlights: [
