@@ -93,13 +93,7 @@ const Icons = {
     )
 }
 
-// Stats data
-const stats = [
-    { value: 150, suffix: '+', label: 'Active Members', icon: 'users' },
-    { value: 25, suffix: '+', label: 'Events Hosted', icon: 'trophy' },
-    { value: 50, suffix: '+', label: 'Projects Built', icon: 'rocket' },
-    { value: 6, suffix: '+', label: 'Years Active', icon: 'target' }
-]
+
 
 // What we do - focus areas
 const focusAreas = [
@@ -132,33 +126,7 @@ const focusAreas = [
 // Get icon helper
 const getIcon = (name: string) => Icons[name as keyof typeof Icons] || Icons.code
 
-// Animated counter component
-function AnimatedCounter({ value, suffix = '' }: { value: number, suffix?: string }) {
-    const [count, setCount] = useState(0)
-    const ref = useRef(null)
-    const isInView = useInView(ref, { once: true, margin: "-50px" })
 
-    useEffect(() => {
-        if (isInView) {
-            const duration = 2000
-            const steps = 60
-            const increment = value / steps
-            let current = 0
-            const timer = setInterval(() => {
-                current += increment
-                if (current >= value) {
-                    setCount(value)
-                    clearInterval(timer)
-                } else {
-                    setCount(Math.floor(current))
-                }
-            }, duration / steps)
-            return () => clearInterval(timer)
-        }
-    }, [isInView, value])
-
-    return <span ref={ref}>{count}{suffix}</span>
-}
 
 // Section wrapper with animations
 function Section({ children, className = '', id = '' }: { children: React.ReactNode, className?: string, id?: string }) {
@@ -222,23 +190,7 @@ export default function AboutSection() {
                         </p>
                     </motion.div>
 
-                    {/* Stats Row */}
-                    <motion.div className="stats-row" variants={staggerContainer}>
-                        {stats.map((stat, index) => (
-                            <motion.div
-                                key={index}
-                                className="stat-card"
-                                variants={scaleIn}
-                                whileHover={{ y: -8, scale: 1.02 }}
-                            >
-                                <div className="stat-icon">{getIcon(stat.icon)}</div>
-                                <div className="stat-value">
-                                    <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-                                </div>
-                                <div className="stat-label">{stat.label}</div>
-                            </motion.div>
-                        ))}
-                    </motion.div>
+
                 </div>
             </Section>
 

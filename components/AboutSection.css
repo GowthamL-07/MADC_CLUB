@@ -133,7 +133,7 @@
 
 .hero-content {
     max-width: 700px;
-    margin: 0 auto 60px;
+    margin: 0 auto;
 }
 
 .hero-label {
@@ -204,69 +204,7 @@
     margin: 0 auto;
 }
 
-/* Stats Row */
-.stats-row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-}
 
-.stat-card {
-    position: relative;
-    padding: 32px 24px;
-    background: rgba(16, 16, 16, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 24px;
-    text-align: center;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    cursor: default;
-}
-
-.stat-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 24px;
-    padding: 1px;
-    background: linear-gradient(135deg, rgba(201, 125, 74, 0.2), transparent, rgba(102, 126, 234, 0.1));
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.stat-card:hover::before {
-    opacity: 1;
-}
-
-.stat-card:hover {
-    border-color: transparent;
-    background: rgba(20, 20, 20, 0.9);
-}
-
-.stat-icon {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 16px;
-    color: #c97d4a;
-}
-
-.stat-value {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: #ffffff;
-    letter-spacing: -0.03em;
-    line-height: 1;
-    margin-bottom: 8px;
-}
-
-.stat-label {
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.5);
-    font-weight: 500;
-}
 
 /* ═══════════════════════════════════════════════════════════════════════════
    MISSION STATEMENT
@@ -528,9 +466,7 @@
    ═══════════════════════════════════════════════════════════════════════════ */
 
 @media (max-width: 1100px) {
-    .stats-row {
-        grid-template-columns: repeat(2, 1fr);
-    }
+
 
     .focus-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -554,18 +490,7 @@
         margin-bottom: 40px;
     }
 
-    .stats-row {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-    }
 
-    .stat-card {
-        padding: 24px 20px;
-    }
-
-    .stat-value {
-        font-size: 2rem;
-    }
 
     .mission-card {
         padding: 36px 28px;
@@ -595,27 +520,7 @@
 }
 
 @media (max-width: 480px) {
-    .stats-row {
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-    }
 
-    .stat-card {
-        padding: 20px 16px;
-    }
-
-    .stat-icon svg {
-        width: 24px;
-        height: 24px;
-    }
-
-    .stat-value {
-        font-size: 1.6rem;
-    }
-
-    .stat-label {
-        font-size: 0.75rem;
-    }
 
     .hero-label {
         font-size: 0.65rem;
